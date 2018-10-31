@@ -1,5 +1,7 @@
 defmodule Ping do
   def start do
-    :ok
+    receive do
+      {:pong, from} -> send(from, {:ping, self()})
+    end
   end
 end
