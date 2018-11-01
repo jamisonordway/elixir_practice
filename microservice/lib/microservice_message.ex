@@ -6,7 +6,7 @@ defmodule Responder do
   
   def loop do
     receive do 
-      {:responder, from} -> send(from, {"", self()})
+      {:"", from} -> send(from, {:string, self()})
     end
   end
 end
